@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -175,7 +175,7 @@
             this.numericUpDown2.Size = new System.Drawing.Size(99, 20);
             this.numericUpDown2.TabIndex = 9;
             this.numericUpDown2.Value = new decimal(new int[] {
-            2000,
+            5000,
             0,
             0,
             -2147483648});
@@ -211,7 +211,7 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "视野纵向移动";
             // 
-            // Form1
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,7 +229,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Form2";
             this.Text = "小花仙 一键截图 V0.1 BY 鄙人  （支持4K、8K高清截图）";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

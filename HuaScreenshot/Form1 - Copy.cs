@@ -35,7 +35,7 @@ namespace HuaScreenshot
             int widthBefore = page.Viewport.Width;
             int heightBefore = page.Viewport.Height;
 
-            this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t分辨率：this.comboBox1.SelectedItem\r\n";
+            this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t分辨率：" + this.comboBox1.SelectedItem + "\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
 
             switch (this.comboBox1.SelectedItem)
@@ -100,44 +100,35 @@ namespace HuaScreenshot
 
             this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t缩放Flash：" + this.numericUpDown1.Value + "倍\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
-            await page.EvaluateExpressionAsync("document.getElementsByTagName('embed')[0].Zoom(100)");
-            await page.EvaluateExpressionAsync("document.getElementsByTagName('embed')[0].Zoom(" + (1 / numericUpDown1.Value * 100) + ")");
+            this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t调整Flash视野：(" + this.numericUpDown2.Value + "," + this.numericUpDown3.Value + ")\r\n";
+            this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
+
+            new Task(() => page.EvaluateExpressionAsync(@"document.getElementsByTagName('embed')[0].Zoom(500);
+                document.getElementsByTagName('embed')[0].Zoom(" + (1 / numericUpDown1.Value * 100) + @");
+                document.getElementsByTagName('embed')[0].Pan(" + numericUpDown2.Value + "," + numericUpDown3.Value + ",1)")).RunSynchronously();
 
             System.Threading.Thread.Sleep(5000);
             this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t等待Flash缩放完成！\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
 
 
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Title = "保存截图";
-            dialog.Filter = "PNG图片 (*.png) | *.png";
+            string savePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + DateTime.Now.ToString("yyyyMMddTHHmmss") + ".png";
 
-            this.Invoke(new MessageBoxHandler(delegate ()
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        page.ScreenshotAsync(dialog.FileName);
-                        this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t" + dialog.FileName + "保存成功！\r\n";
-                        this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
-                    }
-                    catch (Exception ee)
-                    {
-                        this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t保存失败！" + ee.Message + "\r\n";
-                        this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
-                    }
-                }
-            }));
+            await page.ScreenshotAsync(savePath);
+            System.Threading.Thread.Sleep(5000);
 
             this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t分辨率还原\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
 
+            
             await page.SetViewportAsync(new ViewPortOptions
             {
-                Width = 1920,
-                Height = 1080
+                Width = widthBefore,
+                Height = heightBefore
             });
+            
+
+            await page.EvaluateExpressionAsync("document.getElementsByTagName('embed')[0].Zoom(1000)");
         }
 
         private async void button2_ClickAsync(object sender, EventArgs e)
@@ -153,10 +144,10 @@ namespace HuaScreenshot
                 openFileDialog2.Filter = "谷歌内核浏览器启动程序 (*.exe) | *.exe";
                 openFileDialog2.Title = "选择要启用调试模式的浏览器";
 
-                await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
+                // await new BrowserFetcher().DownloadAsync(BrowserFetcher.DefaultRevision);
                 browser = await Puppeteer.LaunchAsync(new LaunchOptions
                 {
-                    ExecutablePath = "E:\\Data\\ChromeCore\\ChromeCore.exe",
+                    ExecutablePath = openFileDialog.FileName,
                     Headless = false
                 });
                 page = await browser.NewPageAsync();
