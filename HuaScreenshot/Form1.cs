@@ -105,7 +105,7 @@ namespace HuaScreenshot
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
             this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t调整Flash视野：(" + this.numericUpDown2.Value + "," + this.numericUpDown3.Value  + ")\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
-            driver.ExecuteScript("document.getElementsByTagName('embed')[0].Pan(" + numericUpDown2.Value + "," + numericUpDown3.Value + ",0)");
+            driver.ExecuteScript("document.getElementsByTagName('embed')[0].Pan(" + numericUpDown2.Value + "," + numericUpDown3.Value + ",1)");
             System.Threading.Thread.Sleep(2000);
             this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t已调整Flash视野\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();

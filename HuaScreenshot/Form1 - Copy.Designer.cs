@@ -1,6 +1,6 @@
 ﻿namespace HuaScreenshot
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "启动浏览器";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.button2_ClickAsync);
             // 
             // label1
             // 
