@@ -116,6 +116,8 @@ namespace HuaScreenshot
 
             await page.ScreenshotAsync(savePath);
             System.Threading.Thread.Sleep(5000);
+            this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t" + savePath + "保存成功！\r\n";
+            this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
 
             this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t分辨率还原\r\n";
             this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
@@ -153,6 +155,17 @@ namespace HuaScreenshot
                 page = await browser.NewPageAsync();
                 await page.GoToAsync("http://hua.61.com/Client.swf");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Hide();
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

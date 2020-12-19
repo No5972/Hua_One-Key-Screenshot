@@ -41,6 +41,7 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -211,11 +212,22 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "视野纵向移动";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(389, 281);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(184, 23);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "Selenium模式";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numericUpDown2);
@@ -230,7 +242,9 @@
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
-            this.Text = "小花仙 一键截图 V0.1 BY 鄙人  （支持4K、8K高清截图）";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "小花仙 一键截图 V0.2 BY 鄙人  （支持4K、8K高清截图） Puppeteer模式";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
@@ -254,6 +268,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
     }
 }
 

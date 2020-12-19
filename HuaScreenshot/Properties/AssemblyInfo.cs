@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HuaScreenshot")]
+[assembly: AssemblyTitle("小花仙 一键截图")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("No.5972")]
+[assembly: AssemblyCompany("wujiuqier")]
 [assembly: AssemblyProduct("HuaScreenshot")]
 [assembly: AssemblyCopyright("Copyright ©  2020 No.5972")]
 [assembly: AssemblyTrademark("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.0.115")]
-[assembly: AssemblyFileVersion("0.1.0.115")]
+[assembly: AssemblyVersion("0.2.0.303")]
+[assembly: AssemblyFileVersion("0.2.0.303")]

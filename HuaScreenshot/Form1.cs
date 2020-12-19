@@ -175,5 +175,16 @@ namespace HuaScreenshot
                 Process.Start(openFileDialog.FileName, "--remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\"");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();
+            this.Hide();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
