@@ -1,0 +1,1 @@
+﻿.\signtool.exe sign /t http://timestamp.verisign.com/scripts/timstamp.dll  /f CEFHuaClient.pfx /p ****** /v bin\x86\Release\HuaScreenshot.exe
