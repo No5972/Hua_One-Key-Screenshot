@@ -22,7 +22,7 @@
 | 星愿浏览器 | √ |  |  √ |  |
 | Edge浏览器（内核87） | √ | Edge默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面（1月21日后更新88版本，此版本开始将无法使用Flash） | × | 无法接入浏览器（Edge谷歌内核版也需要专门的Edge驱动）
 | Chrome浏览器（[内核87便携版](http://www.epinv.com/post/7888.html)）| √ | Chrome默认关闭Flash，因此需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 | √ | Chrome默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 |
-| Chromium浏览器（内核79） | × | Chromium默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 | √ | Chromium默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 |
+| Chromium浏览器（内核79） | × | 指定Flash组件DLL路径后显示Flash因过期被停用，点击运行一次后无反应（考虑添加```--allow-outdated-plugins```） | × | CDP报错：Unable to capture screenshot. (无法截图) |
 | 360安全浏览器 | | 还未测试 | | 还未测试 |
 | 360极速浏览器 | | 还未测试 | | 还未测试 |
 | 搜狗浏览器 | × | 无法接入浏览器 | × | 无法接入浏览器 |
