@@ -251,7 +251,7 @@ namespace HuaScreenshot
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            KillProcess("chromedriver.exe");
+            KillProcess("CHROMEDRIVER");
             Application.Exit();
         }
 
