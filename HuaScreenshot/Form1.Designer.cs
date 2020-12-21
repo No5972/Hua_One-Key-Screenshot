@@ -42,6 +42,11 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.useNoArgs = new System.Windows.Forms.RadioButton();
+            this.useInternalFlash = new System.Windows.Forms.RadioButton();
+            this.useSpecificFlash = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -93,7 +98,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 65);
             this.label2.TabIndex = 4;
-            this.label2.Text = "点击启动浏览器，选择一个\r\n可以直接使用Flash的浏览器，\r\n然后打开hua.61.com/Client.swf\r\n打开你要截图的玩家面板，\r\n然后点击本窗口的" +
+            this.label2.Text = "点击启动浏览器，选择一个\r\n可以直接使用Flash的浏览器，\r\n然后打开hua.61.com/play.shtml\r\n打开你要截图的玩家面板，\r\n然后点击本窗口的" +
     "截图按钮";
             // 
             // comboBox1
@@ -101,14 +106,14 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "7680x4320",
-            "3840x2160",
-            "2560x1440",
-            "1920x1080 (实验性的)",
-            "1600x900 (实验性的)",
-            "1366x768 (实验性的)",
-            "1067x600 (实验性的)",
-            "1280x720 (实验性的)"});
+            "4320x7680",
+            "2160x3840",
+            "1440x2560",
+            "1080x1920 (实验性的)",
+            "900x1600 (实验性的)",
+            "768x1366 (实验性的)",
+            "600x1067 (实验性的)",
+            "720x1280 (实验性的)"});
             this.comboBox1.Location = new System.Drawing.Point(388, 388);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 21);
@@ -176,7 +181,7 @@
             this.numericUpDown2.Size = new System.Drawing.Size(99, 20);
             this.numericUpDown2.TabIndex = 9;
             this.numericUpDown2.Value = new decimal(new int[] {
-            2000,
+            4500,
             0,
             0,
             -2147483648});
@@ -214,19 +219,75 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(392, 281);
+            this.button3.Location = new System.Drawing.Point(388, 281);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(181, 23);
+            this.button3.Size = new System.Drawing.Size(185, 23);
             this.button3.TabIndex = 12;
             this.button3.Text = "Puppeteer模式";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(389, 254);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(150, 20);
+            this.textBox2.TabIndex = 22;
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(545, 252);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 23);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // useNoArgs
+            // 
+            this.useNoArgs.AutoSize = true;
+            this.useNoArgs.Checked = true;
+            this.useNoArgs.Location = new System.Drawing.Point(388, 172);
+            this.useNoArgs.Name = "useNoArgs";
+            this.useNoArgs.Size = new System.Drawing.Size(134, 17);
+            this.useNoArgs.TabIndex = 20;
+            this.useNoArgs.TabStop = true;
+            this.useNoArgs.Text = "不添加Flash路径参数";
+            this.useNoArgs.UseVisualStyleBackColor = true;
+            // 
+            // useInternalFlash
+            // 
+            this.useInternalFlash.AutoSize = true;
+            this.useInternalFlash.Location = new System.Drawing.Point(388, 195);
+            this.useInternalFlash.Name = "useInternalFlash";
+            this.useInternalFlash.Size = new System.Drawing.Size(170, 30);
+            this.useInternalFlash.TabIndex = 19;
+            this.useInternalFlash.Text = "使用浏览器内置\r\nPepperFlash/pepflashplayer.dll";
+            this.useInternalFlash.UseVisualStyleBackColor = true;
+            // 
+            // useSpecificFlash
+            // 
+            this.useSpecificFlash.AutoSize = true;
+            this.useSpecificFlash.Location = new System.Drawing.Point(388, 231);
+            this.useSpecificFlash.Name = "useSpecificFlash";
+            this.useSpecificFlash.Size = new System.Drawing.Size(157, 17);
+            this.useSpecificFlash.TabIndex = 18;
+            this.useSpecificFlash.Text = "使用指定路径的Flash DLL";
+            this.useSpecificFlash.UseVisualStyleBackColor = true;
+            this.useSpecificFlash.CheckedChanged += new System.EventHandler(this.useSpecificFlash_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.useNoArgs);
+            this.Controls.Add(this.useInternalFlash);
+            this.Controls.Add(this.useSpecificFlash);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.label5);
@@ -241,9 +302,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "小花仙 一键截图 V0.2 BY 鄙人  （支持4K、8K高清截图） Selenium模式";
+            this.Text = "小花仙 一键截图 V0.3 BY 鄙人  （支持4K、8K高清截图） Selenium模式";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -269,6 +331,11 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.RadioButton useNoArgs;
+        private System.Windows.Forms.RadioButton useInternalFlash;
+        private System.Windows.Forms.RadioButton useSpecificFlash;
     }
 }
 
