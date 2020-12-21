@@ -285,5 +285,10 @@ namespace HuaScreenshot
                 this.textBox2.Text = dialog.FileName;
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/No5972/Hua_One-Key-Screenshot#%E5%85%BC%E5%AE%B9%E6%80%A7");
+        }
     }
 }
