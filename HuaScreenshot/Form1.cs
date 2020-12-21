@@ -103,6 +103,7 @@ namespace HuaScreenshot
                     driver.ExecuteChromeCommand("Emulation.clearDeviceMetricsOverride", new Dictionary<string, object>());
                     this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t已关闭设备模拟\r\n";
                     this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
+                    this.button1.Enabled = true;
                     return;
                 }
                 System.Threading.Thread.Sleep(3000);
