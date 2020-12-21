@@ -151,6 +151,7 @@ namespace HuaScreenshot
 
 
                 await page.EvaluateExpressionAsync("document.getElementsByTagName('embed')[0].Zoom(1000)");
+                this.button1.Enabled = true;
             } catch (Exception e)
             {
                 MessageBox.Show("截图过程中发生了未知错误：" + e.Message + "\n" + e.StackTrace, "小花仙 - 一键截图", MessageBoxButtons.OK, MessageBoxIcon.Error);
