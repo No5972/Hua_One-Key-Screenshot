@@ -25,12 +25,12 @@
 | 浏览器      | Puppeteer模式 | 备注     | Selenium模式 | 备注     |
 | :---:        |    ----   |          ---  | --- | --- |
 | 双核浏览器<img width=400/>      | ×       | Flash崩溃   | × | Flash崩溃<img width=1800/> |
-| 百分浏览器   | √        |  需使用浏览器内置Flash的单选框 | √ | 需使用浏览器内置Flash的单选框 |
+| 百分浏览器   | √        |  需选择“使用浏览器内置Flash”的单选框 | √ | 需选择“使用浏览器内置Flash”的单选框 |
 | QQ浏览器 | × | 无法接入浏览器 | × | Flash崩溃
-| 星愿浏览器 | √ | 需使用浏览器内置Flash的单选框 |  √ | 需使用浏览器内置Flash的单选框 |
+| 星愿浏览器 | √ | 需选择“使用浏览器内置Flash”的单选框 |  √ | 需选择“使用浏览器内置Flash”的单选框 |
 | Edge浏览器（内核87） | √ | Edge默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面（1月21日后更新88版本，此版本开始将无法使用Flash） | × | 无法接入浏览器（Edge谷歌内核版也需要专门的Edge驱动）
 | Chrome浏览器（[内核87便携版](http://www.epinv.com/post/7888.html)）| √ | Chrome默认关闭Flash，因此需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 | √ | Chrome默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 |
-| Chromium浏览器（[内核78](http://www.downza.cn/soft/217234.html)） | × | 指定Flash组件DLL路径后显示Flash因过期被停用，点击运行一次后无反应（考虑添加```--allow-outdated-plugins```） | × | CDP报错：Unable to capture screenshot. (无法截图) |
+| Chromium浏览器（[内核78](http://www.downza.cn/soft/217234.html)） | × | 指定Flash组件DLL路径后显示Flash因过期被停用，点击运行一次后无反应，关闭浏览器后Puppeteer报错"Failed to load Pepper module"（加载Pepper模块失败） | √ | Chromium默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 |
 | 360安全浏览器 | | 还未测试 | | 还未测试 |
 | 360极速浏览器 | | 还未测试 | | 还未测试 |
 | 搜狗浏览器 | × | 无法接入浏览器 | × | 无法接入浏览器 |
