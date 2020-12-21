@@ -273,7 +273,7 @@ namespace HuaScreenshot
         {
             foreach (Process p in Process.GetProcesses())//GetProcessesByName(strProcessesByName))
             {
-                if (p.ProcessName.ToUpper().Contains("你要关闭的进程名字"))
+                if (p.ProcessName.ToUpper().Contains(strProcessesByName))
                 {
                     try
                     {
