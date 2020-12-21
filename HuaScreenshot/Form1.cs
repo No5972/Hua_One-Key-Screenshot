@@ -47,7 +47,7 @@ namespace HuaScreenshot
             driverService.HideCommandPromptWindow = true;//关闭cmd窗口
             try
             {
-                ChromeDriver driver = new ChromeDriver(driverService, options, TimeSpan.FromSeconds(7));
+                ChromeDriver driver = new ChromeDriver(driverService, options, TimeSpan.FromSeconds(20));
                 this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t已找到浏览器：" + driver.SessionId + "\r\n";
                 this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
 
@@ -203,7 +203,7 @@ namespace HuaScreenshot
 
                 if (this.useNoArgs.Checked)
                 {
-                    Process.Start(openFileDialog.FileName, "http://hua.61.com/play.shtml --remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\"");
+                    Process.Start(openFileDialog.FileName, "http://hua.61.com/play.shtml --remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\" --allow-outdated-plugins");
                 }
                 else if (this.useInternalFlash.Checked)
                 {
@@ -211,13 +211,13 @@ namespace HuaScreenshot
                     {
                         MessageBox.Show("所选浏览器的目录下未能找到Flash的组件DLL，Flash可能无法正常加载，建议使用手动指定Flash的模式。（留意一下PepperFlash文件夹是否放在了浏览器的某个子目录下）", "小花仙 - 一键截图", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    Process.Start(openFileDialog.FileName, "http://hua.61.com/play.shtml --remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\"  --ppapi-flash-path=\"" + this.browserPath + "\\User Data\\PepperFlash\\pepflashplayer.dll\" --ppapi-flash-version=99.0.0.999");
+                    Process.Start(openFileDialog.FileName, "http://hua.61.com/play.shtml --remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\"  --ppapi-flash-path=\"" + this.browserPath + "\\User Data\\PepperFlash\\pepflashplayer.dll\" --ppapi-flash-version=99.0.0.999 --allow-outdated-plugins");
                 } 
                 else if (this.useSpecificFlash.Checked)
                 {
                     if (File.Exists(this.textBox2.Text) && this.textBox2.Text.EndsWith(".dll"))
                     {
-                        Process.Start(openFileDialog.FileName, "http://hua.61.com/play.shtml --remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\"  --ppapi-flash-path=\"" + this.textBox2.Text + "\" --ppapi-flash-version=99.0.0.999");
+                        Process.Start(openFileDialog.FileName, "http://hua.61.com/play.shtml --remote-debugging-port=9222  --user-data-dir=\"D:\\selenium\\AutomationProfile\"  --ppapi-flash-path=\"" + this.textBox2.Text + "\" --ppapi-flash-version=99.0.0.999 --allow-outdated-plugins");
                     } else
                     {
                         MessageBox.Show("错误：指定位置没有找到可用的DLL文件！请点击右侧的...按钮选择正确的pepflashplayer.dll文件，如果无法找到此文件可到网络上搜索下载PPAPI Flash Player绿色版。", "小花仙 - 一键截图", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -274,5 +274,15 @@ namespace HuaScreenshot
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "指定Flash组件文件，文件名通常是pepflashplayer.dll";
+            dialog.Filter = "Flash组件文件pepflashplayer.dll (*.dll)|*.dll";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                this.textBox2.Text = dialog.FileName;
+            }
+        }
     }
 }

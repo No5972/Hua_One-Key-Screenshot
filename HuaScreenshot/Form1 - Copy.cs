@@ -179,6 +179,9 @@ namespace HuaScreenshot
                     {
                         ExecutablePath = openFileDialog.FileName,
                         Headless = false,
+                        Args = new string[]{
+                            "--allow-outdated-plugins"
+                        },
                         DefaultViewport =
                         {
                             Width = 1067,
@@ -201,7 +204,8 @@ namespace HuaScreenshot
                         Headless = false,
                         Args = new string[]{ 
                             "--ppapi-flash-path=\"" + this.browserPath + "\\User Data\\PepperFlash\\pepflashplayer.dll\"",
-                            "--ppapi-flash-version=99.0.0.999"
+                            "--ppapi-flash-version=99.0.0.999",
+                            "--allow-outdated-plugins"
                         },
                         DefaultViewport =
                         {
@@ -223,7 +227,8 @@ namespace HuaScreenshot
                             Headless = false,
                             Args = new string[]{
                                 "--ppapi-flash-path=\"" + this.textBox2.Text,
-                                "--ppapi-flash-version=99.0.0.999"
+                                "--ppapi-flash-version=99.0.0.999",
+                                "--allow-outdated-plugins"
                             },
                             DefaultViewport =
                             {
@@ -290,6 +295,17 @@ namespace HuaScreenshot
                         MessageBox.Show(e.Message.ToString()); // process has already exited - might be able to let this one go
                     }
                 }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "指定Flash组件文件，文件名通常是pepflashplayer.dll";
+            dialog.Filter = "Flash组件文件pepflashplayer.dll (*.dll)|*.dll";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                this.textBox2.Text = dialog.FileName;
             }
         }
     }
