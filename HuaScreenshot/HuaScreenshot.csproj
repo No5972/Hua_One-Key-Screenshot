@@ -160,6 +160,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomResolution.cs" />
+    <Compile Include="CustomResolution.Designer.cs" />
     <Compile Include="Form1 - Copy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +176,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomResolution.resx" />
     <EmbeddedResource Include="Form1 - Copy.resx">
       <DependentUpon>Form1 - Copy.cs</DependentUpon>
     </EmbeddedResource>

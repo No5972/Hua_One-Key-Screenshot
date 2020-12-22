@@ -93,11 +93,13 @@
             "900x1600 (实验性的)",
             "768x1366 (实验性的)",
             "600x1067 (实验性的)",
-            "720x1280 (实验性的)"});
+            "720x1280 (实验性的)",
+            "自定义..."});
             this.comboBox1.Location = new System.Drawing.Point(388, 388);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(186, 21);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -275,10 +277,10 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(388, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 65);
+            this.label2.Size = new System.Drawing.Size(175, 91);
             this.label2.TabIndex = 23;
-            this.label2.Text = "点击启动浏览器，选择一个\r\n可以直接使用Flash的浏览器，\r\n然后打开hua.61.com/play.shtml\r\n打开你要截图的玩家面板，\r\n然后点击本窗口的" +
-    "截图按钮";
+            this.label2.Text = "首先根据实际情况选择加载\r\nFlash的方式，然后点击启动\r\n浏览器，选择一个可以直接使用\r\nFlash的浏览器，然后打开\r\nhua.61.com/play.sh" +
+    "tml\r\n打开你要截图的玩家面板，\r\n然后点击本窗口的截图按钮\r\n";
             // 
             // Form1
             // 

@@ -19,6 +19,10 @@ namespace HuaScreenshot
         public delegate void MessageBoxHandler();
         public string browserPath = "";
 
+        int customWidth { get; set; }
+        int customHeight { get; set; }
+        bool isCustomResolution = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -77,6 +81,15 @@ namespace HuaScreenshot
                         break;
                     case "720x1280 (实验性的)":
                         emulationParams.Add("width", 720); emulationParams.Add("height", 1280);
+                        break;
+                    case "自定义...":
+                        if (isCustomResolution)
+                        {
+                            emulationParams.Add("width", this.customWidth); emulationParams.Add("height", this.customHeight);
+                        } else
+                        {
+                            emulationParams.Add("width", 4320); emulationParams.Add("height", 7680);
+                        }
                         break;
                     default:
                         emulationParams.Add("width", 4320); emulationParams.Add("height", 7680);
@@ -289,6 +302,74 @@ namespace HuaScreenshot
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/No5972/Hua_One-Key-Screenshot#%E5%85%BC%E5%AE%B9%E6%80%A7");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (((ComboBox)sender).SelectedItem)
+            {
+                case "4320x7680":
+                    this.numericUpDown2.Value = -4500 * 7680 / 7680;
+                    this.numericUpDown3.Value = -2000 * 7680 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "2160x3840":
+                    this.numericUpDown2.Value = -4500 * 3840 / 7680;
+                    this.numericUpDown3.Value = -2000 * 3840 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "1440x2560":
+                    this.numericUpDown2.Value = -4500 * 2560 / 7680;
+                    this.numericUpDown3.Value = -2000 * 2560 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "1080x1920 (实验性的)":
+                    this.numericUpDown2.Value = -4500 * 1920 / 7680;
+                    this.numericUpDown3.Value = -2000 * 1920 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "900x1600 (实验性的)":
+                    this.numericUpDown2.Value = -4500 * 1600 / 7680;
+                    this.numericUpDown3.Value = -2000 * 1600 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "768x1366 (实验性的)":
+                    this.numericUpDown2.Value = -4500 * 1366 / 7680;
+                    this.numericUpDown3.Value = -2000 * 1366 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "600x1067 (实验性的)":
+                    this.numericUpDown2.Value = -4500 * 1067 / 7680;
+                    this.numericUpDown3.Value = -2000 * 1067 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "720x1280 (实验性的)":
+                    this.numericUpDown2.Value = -4500 * 1280 / 7680;
+                    this.numericUpDown3.Value = -2000 * 1280 / 7680;
+                    this.isCustomResolution = false;
+                    break;
+                case "自定义...":
+                    CustomResolution resolution = new CustomResolution(7680, 4320);
+                    if (resolution.ShowDialog() == DialogResult.OK)
+                    {
+                        // resizeWindow(resolution.thisWidth, resolution.thisHeight);
+                        this.customWidth = resolution.thisWidth;
+                        this.customHeight = resolution.thisHeight;
+                        this.numericUpDown2.Value = -4500 * resolution.thisWidth / 7680;
+                        this.numericUpDown3.Value = -2100 * resolution.thisWidth / 7680;
+                        this.isCustomResolution = true;
+                        this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "\t自定义分辨率：" + this.customWidth + "x" + this.customHeight + "\r\n";
+                        this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
+                        resolution.Dispose();
+                    }
+                    else
+                    {
+                        this.comboBox1.SelectedIndex = 0;
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
