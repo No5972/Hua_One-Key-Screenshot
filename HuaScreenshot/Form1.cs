@@ -195,6 +195,7 @@ namespace HuaScreenshot
                 this.textBox1.Text += DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.FFF") + "\t已完成Flash缩放还原\r\n";
                 this.textBox1.SelectionStart = this.textBox1.Text.Length; this.textBox1.ScrollToCaret();
                 driver.Dispose();
+                this.button1.Enabled = true;
             } catch (WebDriverException wde)
             {
                 MessageBox.Show("未能找到浏览器实例或者已经打开的浏览器实例已被关闭，请先点击启动浏览器。", "小花仙 - 一键截图", MessageBoxButtons.OK, MessageBoxIcon.Error);
