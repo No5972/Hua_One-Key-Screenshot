@@ -1,5 +1,5 @@
 # 小花仙 一键截图工具 支持4K、8K高清截图
-小花仙 一键截图工具 支持4K、8K高清截图
+小花仙 一键截图工具 支持4K、8K高清截图 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/No5972/Hua_One-Key-Screenshot?label=%E7%82%B9%E6%AD%A4%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/No5972/Hua_One-Key-Screenshot/releases/latest)
 
 ## 操作方法
 1. 先打开一键截图工具
