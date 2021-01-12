@@ -1,6 +1,8 @@
 # 小花仙 一键截图工具 支持4K、8K高清截图
 小花仙 一键截图工具 支持4K、8K高清截图 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/No5972/Hua_One-Key-Screenshot?label=%E7%82%B9%E6%AD%A4%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC%EF%BC%88%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%EF%BC%89)](https://github.com/No5972/Hua_One-Key-Screenshot/releases/latest)
 
+**注意：经过实测，本工具只支持接入64位的浏览器，32位的浏览器截图过程中Flash崩溃的几率很大，因此需使用64位的浏览器来操作。**
+
 ## 操作方法
 1. 先打开一键截图工具
 2. 如果你的浏览器可以直接使用Flash，那么单选框不用管；如果你的浏览器需要手动指定Flash路径，那么根据实际情况选择指定Flash的方式，如果使用指定路径的Flash还需要浏览选择Flash组件DLL的位置（如果没有的话需要去网上搜索下载Flash Player PPAPI绿色版）。
