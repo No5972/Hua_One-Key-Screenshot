@@ -5,7 +5,7 @@
 
 ## 操作方法
 0. **如果使用Selenium模式，需要先下载Chrome Selenium驱动，并设置环境变量```PATH```到驱动的```chromedriver.exe```所在目录的路径。**
-  * **下载地址：http://chromedriver.storage.googleapis.com/index.html 。只要浏览器的内核版本不低于webdriver的版本即可。 **
+  - **下载地址：http://chromedriver.storage.googleapis.com/index.html 。只要浏览器的内核版本不低于webdriver的版本即可。 **
 1. 先打开一键截图工具
 2. 如果你的浏览器可以直接使用Flash，那么单选框不用管；如果你的浏览器需要手动指定Flash路径，那么根据实际情况选择指定Flash的方式，如果使用指定路径的Flash还需要浏览选择Flash组件DLL的位置（如果没有的话需要去网上搜索下载Flash Player PPAPI绿色版）。
 3. 点击启动浏览器，找到使用的浏览器的启动程序。
