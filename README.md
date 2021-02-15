@@ -34,7 +34,7 @@
 | Chrome浏览器（[内核87便携版](http://www.epinv.com/post/7888.html)）| √ | Chrome默认关闭Flash，因此需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面（1月19日后更新88版本，此版本开始将无法使用Flash） | √ | Chrome默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面（1月19日后更新88版本，此版本开始将无法使用Flash） |
 | Chromium浏览器（[内核78](http://www.downza.cn/soft/217234.html)） | × | 指定Flash组件DLL路径后显示Flash因过期被停用，点击运行一次后无反应，关闭浏览器后Puppeteer报错"Failed to load Pepper module"（加载Pepper模块失败） | √ | Chromium默认关闭Flash，因此需要需要手动开启Flash。点击“进行游戏需要Flash Player”，再点击地址栏左边的不安全，点站点权限，把Flash改成允许，回到游戏页面刷新页面 |
 | 360安全浏览器 | √ | 默认使用的小花仙游戏页面锁版本32的Flash，需要手动访问[小花仙Flash的URL](http://hua.61.com/Client.swf)来操作，这个可以正常截图 | × | Flash崩溃 |
-| 360极速浏览器 | × | 启动基座失败 | | 还未测试 |
+| 360极速浏览器 | √ | 默认使用的小花仙游戏页面锁版本32的Flash，需要手动访问[小花仙Flash的URL](http://hua.61.com/Client.swf)来操作，但有几率出现人物消失的问题，需要多次尝试 | × | Flash崩溃 |
 | 搜狗浏览器 | × | 无法接入浏览器 | × | 无法接入浏览器 |
 | 猎豹浏览器 | × | 启动基座失败 | × | Flash崩溃 | 
 | UC浏览器 | × | 只有版本55的内核，用的还是NPAPI（测试环境已经安装了移除Flash的系统更新） | × | 只有版本55的内核，用的还是NPAPI（测试环境已经安装了移除Flash的系统更新） |
